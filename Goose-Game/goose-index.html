@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Unidled Goose Game</title>
+        <link rel="stylesheet" href="goose-styles.css"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Unidled Goose Game</h1>
+            <hr>
+        </header>
+        <main>
+            <div id="menu">
+                <button id="button3">Home</button>
+                <button id="button0">Farm</button>
+                <button id="button1">Barn</button>
+                <button id="button2">Store</button>
+                <button id="button4">Goals</button>
+            </div>
+            <div id="contents-all">
+                <div id="description">
+                    <p>Welcome to the Unidled Goose Game! You can level up your animals with food or warmth at the barn, collect water lillies at the farm and
+                        spend your flowers for corn, warmth or additional eggs at the store!</p>
+                </div>
+                <div id="content">
+                    <img src="Images/Goose.png" class="start-image"></button>
+                </div>
+            </div>
+        </main>
+        <hr>
+        <footer id="stats">
+            <p>Flowers in inventory: <span id="flowers-in-inventory">0</span></p>
+            <p>Goose level: <span id="geese-level">1</span></p>
+            <div>
+                <button id="save-game">Save</button>
+                <button id="reset">Reset</button>
+            </div>
+        </footer>
+        <script src="items.js"></script>
+        <script src="achievements.js"></script>
+        <script src="goose-script.js"></script>
+    </body>
+</html>

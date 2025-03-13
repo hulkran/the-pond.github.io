@@ -1,0 +1,115 @@
+* {
+    box-sizing:border-box;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #28392D;
+    color: #FEF4EA;
+    font-family: "Quicksand", sans-serif;
+}
+
+main {
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+}
+
+h1, p, h2 {
+    max-width: 100%;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#menu {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#contents-all {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    margin: 8px;
+    border-radius: 5px;
+    text-align:center;
+    font-weight:500;
+    text-transform:uppercase;
+    background-color:#FEF4EA;
+    color:#400101;
+    height: 25px;
+    min-width: 100px;
+}
+
+button:hover {
+    background-color: #D9AB9A;
+    color: #400101;
+}
+
+button:disabled {
+    background-color: #28392D;
+    color: #FEF4EA;
+}
+
+#collect { /*FIX!!*/
+    width: 250px;
+    height: 250px;
+    background-image: url(./Images/WaterLilly.png);
+    background-size: cover;
+    color: #D9E6C3;
+    font-size: 20px;
+}
+
+#collect:hover {
+    background-color: #28392D;
+}
+
+hr {
+    background-color: #FEF4EA;
+    margin-top: 16px;
+    max-width: 80%;
+}
+
+.inventory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+/*IMAGES*/
+.inventory-image {
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    margin-right: 16px;
+    filter: grayscale(25%);
+}
+
+.start-image {
+    display: block;
+    margin: 16px;
+    max-width: 256px;
+    max-height: 256px;
+    filter: grayscale(25%);
+}
