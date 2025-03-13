@@ -865,7 +865,7 @@ const listAchievements = () => {
 }
 
 //saving the game
-var saveGame = localStorage.getItem("GooseGameSave");
+var saveGame = localStorage.getItem("GooseGameSave1");
 var gameData = {
     inventoryAnimals: inventoryAnimals,
     inventoryItems: inventoryItems,
@@ -1214,7 +1214,7 @@ const updateFooterLevel = (level) => {
 }
 
 //Functions to save game or reset
-const savegame = JSON.parse(localStorage.getItem("GooseGameSave"));
+const savegame = JSON.parse(localStorage.getItem("GooseGameSave1"));
 if (savegame !== null) {
     gameData = savegame;
 
@@ -1327,7 +1327,7 @@ const saveGameLoop = () => {
     gameData.passiveCorn = passiveCorn;
 
     gameData.lastTick = Date.now();
-    localStorage.setItem("GooseGameSave", JSON.stringify(gameData));
+    localStorage.setItem("GooseGameSave1", JSON.stringify(gameData));
     console.log("Game Saved: ", gameData);
 }
 
@@ -1354,7 +1354,7 @@ window.setInterval(() => {
 //reset
 resetBtn.addEventListener ("click", () => {
     if(confirm("Are you sure?!")) {
-        localStorage.removeItem("GooseGameSave");
+        localStorage.removeItem("GooseGameSave1");
         window.location.reload();    
     }
 });
