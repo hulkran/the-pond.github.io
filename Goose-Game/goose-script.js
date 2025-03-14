@@ -891,6 +891,7 @@ const content = document.getElementById("content");
 const flowersInInventory = document.getElementById("flowers-in-inventory");
 const geeseLevel = document.getElementById("geese-level");
 const button3 = document.getElementById("button3");
+const banner = document.getElementById("banner");
 
 //Updates Locations
 const update = (location) => {
@@ -954,7 +955,13 @@ const collectFlowers = () => {
             if (eggChance()) {
                 inventoryAnimals[0].amount += 1;
                 eggAmtCounter ++;
-                alert("Corngraduations! Your Geese layed an Egg!");
+                window.setTimeout(() => {
+                    banner.removeAttribute("hidden");
+                    banner.innerHTML = `<p>Corngraduations! Your Geese layed an Egg!</p>`;
+                    setTimeout(() => {
+                        banner.setAttribute("hidden", true);
+                    }, 5000);
+                }, 0);
             }
         });
     }, 100);
@@ -994,9 +1001,15 @@ const buyItems = () => {
     const buyCake = document.getElementById("Birthday-Cake-buy");
 
     buyCorn.addEventListener("click", () => {
-        //checks if enough Flowers to buy Item and gives alert if not and updates Footer UI
+        //checks if enough Flowers to buy Item and gives alert(banner) if not and updates Footer UI
         if (inventoryItems[1].amount < storeItems[0].buyPrice) {
-            alert("Not enough Flowers!");
+            window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>Not enough Flowers!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
             updateFooterFlower(inventoryItems[1].amount);
             return;
         }
@@ -1009,7 +1022,7 @@ const buyItems = () => {
     });
     buyWarmth.addEventListener("click", () => {
         if (inventoryItems[1].amount < storeItems[1].buyPrice) {
-            alert("Not enough Flowers!")
+            
             updateFooterFlower(inventoryItems[1].amount);
             return;
         }
@@ -1021,7 +1034,13 @@ const buyItems = () => {
     });
     buyEgg.addEventListener("click", () => {
         if (inventoryItems[1].amount < storeItems[2].buyPrice) {
-            alert("Not enough Flowers!")
+            window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>Not enough Flowers!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
             updateFooterFlower(inventoryItems[1].amount);
             return;
         }
@@ -1035,7 +1054,13 @@ const buyItems = () => {
     if (storeItems[3].visibility) {
         buyCornBundle.addEventListener("click", () => {
             if (inventoryItems[1].amount < storeItems[3].buyPrice) {
-                alert("Not enough Flowers!");
+                window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>Not enough Flowers!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
                 updateFooterFlower(inventoryItems[1].amount);
                 return;
             }
@@ -1049,7 +1074,13 @@ const buyItems = () => {
     if (storeItems[4].visibility) {
         buyCornBag.addEventListener("click", () => {
             if (inventoryItems[1].amount < storeItems[4].buyPrice) {
-                alert("Not enough Flowers!");
+                window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>Not enough Flowers!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
                 updateFooterFlower(inventoryItems[1].amount);
                 return;
             }
@@ -1063,7 +1094,13 @@ const buyItems = () => {
     if (storeItems[5].visibility) {
         buyBalloon.addEventListener("click", () => {
             if (inventoryItems[1].amount < storeItems[5].buyPrice) {
-                alert("Not enough Flowers!");
+                window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>Not enough Flowers!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
                 updateFooterFlower(inventoryItems[1].amount);
                 return;
             }
@@ -1072,14 +1109,26 @@ const buyItems = () => {
                 updateFooterFlower(inventoryItems[1].amount);
                 randomFlower = Math.floor(Math.random() * (500 - 50 + 1)) + 50;
                 inventoryItems[1].amount += randomFlower;
-                alert(`The Balloon popped and gave you ${randomFlower} Flowers!`)
+                window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>The Balloon popped and gave you ${randomFlower} Flowers!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
             }
         });
     }
     if (storeItems[6].visibility) {
         buyCake.addEventListener("click", () => {
             if (inventoryItems[1].amount < storeItems[6].buyPrice) {
-                alert("Not enough Flowers!");
+                window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>Not enough Flowers!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
                 updateFooterFlower(inventoryItems[1].amount);
                 return;
             }
@@ -1109,7 +1158,13 @@ const levelAnimals = () => {
             return;
         }
         else if (inventoryItems[2].amount < 10) { //checks for warmth
-            alert("Not enough Warmth!");
+            window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>Not enough Warmth!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
             return;
         }
         else {
@@ -1132,7 +1187,13 @@ const levelAnimals = () => {
             hideButtons(levelEgg, levelGosling, levelGeese);
             return;
         } else if (inventoryItems[0].amount < 5) {
-            alert("Not enough Food!")
+            window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>Not enough Food!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
             return;
         }
         else {
@@ -1153,7 +1214,13 @@ const levelAnimals = () => {
             hideButtons(levelEgg, levelGosling, levelGeese);
             return;
         } else if (inventoryItems[0].amount < requiredCorn) {
-            alert("Not enough Food!");
+            window.setTimeout(() => {
+                banner.removeAttribute("hidden");
+                banner.innerHTML = `<p>Not enough Food!</p>`;
+                setTimeout(() => {
+                    banner.setAttribute("hidden", true);
+                }, 5000);
+            }, 0);
             return;
         }
         else {
@@ -1329,7 +1396,16 @@ const saveGameLoop = () => {
     console.log("Game Saved: ", gameData);
 }
 
-saveGameBtn.onclick = saveGameLoop;
+saveGameBtn.onclick = () => {
+    saveGameLoop;
+    window.setTimeout(() => {
+        banner.removeAttribute("hidden");
+        banner.innerHTML = `<p>Game saved!</p>`;
+        setTimeout(() => {
+            banner.setAttribute("hidden", true);
+        }, 5000);
+    }, 0);
+}
 
 //Auto-save
 window.setInterval(() => {
