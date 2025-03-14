@@ -1346,7 +1346,6 @@ window.setInterval(() => {
 //Auto-tick Corn
 window.setInterval(() => {
     inventoryItems[0].amount += passiveCorn;
-    console.log(inventoryItems[0].amount);
 }, 1000);
 
 //reset
