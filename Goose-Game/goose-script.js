@@ -120,7 +120,7 @@ const locations = [
       name: "Farm",
       text: `<p>Press the button below to collect water lillies.
       You can trade them for corn or warmth at the store.
-      With each click your geese have a 1% chance of laying an egg!</p>`
+      With each click your geese have a small chance of laying an egg!</p>`
     },
     {
       name: "Barn",
@@ -133,7 +133,7 @@ const locations = [
     },
     {
       name: "Goals",
-      text: `<p>Collect unlocked achievements here.</p>`
+      text: `<p>Collect unlocked achievements here. Eggs collected with Colleggtor do not count towards the achievement!</p>`
     }
 ];
 
@@ -219,8 +219,6 @@ const storeRefresh = () => {
         document.getElementById("Flower-amount").innerHTML = inventoryItems[1].amount;
         document.getElementById("Corn-amount").innerHTML = inventoryItems[0].amount;
         document.getElementById("Warmth-amount").innerHTML = inventoryItems[2].amount;
-        //document.getElementById("Balloon-amount").innerHTML = inventoryItems[3].amount;
-        //document.getElementById("Birthday-Cake-amount").innerHTML = inventoryItems[4].amount;
     }, 500);
 }
 
@@ -558,7 +556,7 @@ const enableHorseSizedGoose = () => {
         })
     }
 
-    if (inventoryAnimals[2].amount >= 50 && !horseSizedGoose[2].achieved) {
+    if (inventoryAnimals[2].level >= 50 && !horseSizedGoose[2].achieved) {
         horseSizedGoose3.removeAttribute("disabled");
         horseSizedGoose3.addEventListener("click", () => {
             horseSizedGoose[2].achieved = true;
@@ -568,7 +566,7 @@ const enableHorseSizedGoose = () => {
         })
     }
 
-    if (inventoryAnimals[2].amount >= 100 && !horseSizedGoose[3].achieved) {
+    if (inventoryAnimals[2].level >= 100 && !horseSizedGoose[3].achieved) {
         horseSizedGoose4.removeAttribute("disabled");
         horseSizedGoose4.addEventListener("click", () => {
             horseSizedGoose[3].achieved = true;
@@ -578,7 +576,7 @@ const enableHorseSizedGoose = () => {
         })
     }
 
-    if (inventoryAnimals[2].amount >= 500 && !horseSizedGoose[4].achieved) {
+    if (inventoryAnimals[2].level >= 500 && !horseSizedGoose[4].achieved) {
         horseSizedGoose5.removeAttribute("disabled");
         horseSizedGoose5.addEventListener("click", () => {
             horseSizedGoose[4].achieved = true;
