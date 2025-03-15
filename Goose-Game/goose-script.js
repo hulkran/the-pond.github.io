@@ -327,7 +327,7 @@ const horseSizedGoose = [
     {
         number: 2,
         requirement: 'Reach goose level 10',
-        reward: '10 passive corn generation',
+        reward: '50 passive corn generation',
         button: `<button id="horse-sized-goose2" disabled>Collect</button>`,
         achieved: false
     },
@@ -341,7 +341,7 @@ const horseSizedGoose = [
     {
         number: 4,
         requirement: 'Reach goose level 100',
-        reward: '50 passive corn generation',
+        reward: '500 passive corn generation',
         button: `<button id="horse-sized-goose4" disabled>Collect</button>`,
         achieved: false
     },
@@ -552,7 +552,7 @@ const enableHorseSizedGoose = () => {
             horseSizedGoose[1].achieved = true;
             horseSizedGoose2.setAttribute("disabled", true);
             horseSizedGoose2.innerHTML = `Collected`;
-            passiveCorn = 10;
+            passiveCorn = 50;
         })
     }
 
@@ -572,7 +572,7 @@ const enableHorseSizedGoose = () => {
             horseSizedGoose[3].achieved = true;
             horseSizedGoose4.setAttribute("disabled", true);
             horseSizedGoose4.innerHTML = `Collected`;
-            passiveCorn = 50;
+            passiveCorn = 500;
         })
     }
 
@@ -1029,7 +1029,7 @@ const buyItems = () => {
         else {
             inventoryItems[1].amount -= storeItems[1].buyPrice;
             updateFooterFlower(inventoryItems[1].amount);
-            inventoryItems[2].amount += 1;
+            inventoryItems[2].amount += 10;
         }
     });
     buyEgg.addEventListener("click", () => {
@@ -1067,7 +1067,7 @@ const buyItems = () => {
             else {
                 inventoryItems[1].amount -= storeItems[3].buyPrice;
                 updateFooterFlower(inventoryItems[1].amount);
-                inventoryItems[0].amount += 100;
+                inventoryItems[0].amount += 1000;
             }
         });
     }
@@ -1087,7 +1087,7 @@ const buyItems = () => {
             else {
                 inventoryItems[1].amount -= storeItems[4].buyPrice;
                 updateFooterFlower(inventoryItems[1].amount);
-                inventoryItems[0].amount += 1000;
+                inventoryItems[0].amount += 10000;
             }
         });
     }
@@ -1135,7 +1135,7 @@ const buyItems = () => {
             else {
                 inventoryItems[1].amount -= storeItems[6].buyPrice;
                 updateFooterFlower(inventoryItems[1].amount);
-                inventoryItems[0].amount += 100000;
+                inventoryItems[0].amount += 10000000;
             }
         });
     }
