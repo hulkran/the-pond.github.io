@@ -347,7 +347,7 @@ const horseSizedGoose = [
     },
     {
         number: 5,
-        requirement: 'Reach goose level 500',
+        requirement: 'Reach goose level 150',
         reward: 'Unlock bag of corn at the store',
         button: `<button id="horse-sized-goose5" disabled>Collect</button>`,
         achieved: false
@@ -576,7 +576,7 @@ const enableHorseSizedGoose = () => {
         })
     }
 
-    if (inventoryAnimals[2].level >= 500 && !horseSizedGoose[4].achieved) {
+    if (inventoryAnimals[2].level >= 150 && !horseSizedGoose[4].achieved) {
         horseSizedGoose5.removeAttribute("disabled");
         horseSizedGoose5.addEventListener("click", () => {
             horseSizedGoose[4].achieved = true;
